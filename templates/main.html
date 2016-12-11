@@ -1,0 +1,22 @@
+{% extends 'template.html' %}
+{% block content %}
+    <h2>Welcome to the Basic Blog!</h2>
+    <p><a href="/logout">Logout</a></p>
+        <h3>Add new post:</h3>
+        <form action="{{ url_for('add') }}" method="post" class="add">
+            <label><strong>Title:</strong></label>
+            <input name="title" type="text">
+            <p>
+                <label><strong>Post:</strong></label>
+                <textarea name="post" rows="4" cols="40"></textarea>
+            </p>
+            <input class="button" type="submit" value="Save">
+        </form>
+    <br/>
+    <h3>Posts:</h3>
+    {% for p in posts %}
+        <strong>Title:</strong> {{ p.title }} <br/>
+        <strong>Post:</strong> {{ p.post }} <br/>
+        <br/> <!-- newline break between posts -->
+    {% endfor %}
+{% endblock %}
