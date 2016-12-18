@@ -1,3 +1,10 @@
+"""
+Defines views for Flask project site, represented
+as functions here. Includes decorator for handling
+routing required login credentials. Configuration
+for Flask app object imported from _config module,
+in same directory as this file.
+"""
 import sqlite3
 from functools import wraps
 from flask import Flask, flash, redirect, \
