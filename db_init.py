@@ -19,6 +19,7 @@ def create_db(db_path, overwrite=False):
 
 if __name__ == "__main__":
     import sys
+    # require database path if run on command line
     if len(sys.argv) == 2:
         create_db(sys.argv[1])
     else:
